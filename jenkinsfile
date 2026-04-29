@@ -1,13 +1,13 @@
 pipeline {
-      agent any
-      stages {
-          stage('hello') {
-              steps {
-                  bat '''
-                  @echo off
-                  echo Hello, world!
-                  '''
-                }
+    agent any
+
+    stages {
+
+        stage('Run PowerShell Script') {
+            steps {
+                powershell './hello.ps1'
             }
         }
-  }
+
+    }
+}
